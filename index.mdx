@@ -35,49 +35,49 @@ If you have any questions about our API or you would like to participate in our 
 
 Access to the Award Force API is secured via API Keys. You may generate as many keys as you like yet each key belongs to the one account. The scope of the key determines the permissions of the key:
 
-Read only - for read endpoints only\
+Read only - for read endpoints only
 Read / Write - for read and write endpoints
 
 Multiple email addresses may be specified for receiving notification emails.
 
 ## Generate API key
 
-1. In Award Force navigate to _Settings \> Integrations \> API Keys_
-2. Click **Generate API Key**
-3. Enter **Key name / purpose**
-4. Select **Scope**
+1. In Award Force navigate to _Settings \> Integrations \> API Keys_
+2. Click **Generate API Key**
+3. Enter **Key name / purpose**
+4. Select **Scope**
    1. Read only - for read endpoints only
    2. Read / Write - for read and write endpoints
 5. Specify notification email addresses (optional). Separate each address with a comma (,) or a semicolon (;)
-6. Click **Save**
+6. Click **Save**
 
 ## Edit API key
 
-1. In Award Force navigate to _Settings \> Integrations \> API Keys_
-2. Click on the **Key name / purpose** of the key you\
-   wish to edit OR click on the overflow action menu of the key you wish to edit and click **Edit**
-3. Update **Key name / purpose**
-4. Update **Scope**
+1. In Award Force navigate to _Settings \> Integrations \> API Keys_
+2. Click on the **Key name / purpose** of the key you
+   wish to edit OR click on the overflow action menu of the key you wish to edit and click **Edit**
+3. Update **Key name / purpose**
+4. Update **Scope**
    1. Read only - for read endpoints only
    2. Read / Write - for read and write endpoints
 5. Update notification email addresses (optional). Separate each address with a comma (,) or a semicolon (;)
-6. Click **Save**
+6. Click **Save**
 
 ## Revoke API key
 
-1. In Award Force navigate to _Settings \> Integrations \> API Keys_
-2. Click on the overflow action menu of the key you wish to edit and click **Revoke**
-3. Click **OK** in the confirm dialog
+1. In Award Force navigate to _Settings \> Integrations \> API Keys_
+2. Click on the overflow action menu of the key you wish to edit and click **Revoke**
+3. Click **OK** in the confirm dialog
 
 # Requests
 
 The request URL is [api.cr4ce.com](http://api.cr4ce.com) however for optimal performance we recommend using our regional endpoints. Select the region to match your account location.
 
-US: [**api.us.cr4ce.com**](http://api.us.cr4ce.com)\
-EU: [**api.eu.cr4ce.com**](http://api.eu.cr4ce.com)\
-Australasia: [**api.au.cr4ce.com**](http://api.au.cr4ce.com)\
-Canada: [**api.ca.cr4ce.com**](http://api.ca.cr4ce.com)\
-Hong Kong: [**api.hk.cr4ce.com**](http://api.hk.cr4ce.com)
+US: [**api.us.cr4ce.com**](http://api.us.cr4ce.com)
+EU: [**api.eu.cr4ce.com**](http://api.eu.cr4ce.com)
+Australasia: [**api.au.cr4ce.com**](http://api.au.cr4ce.com)
+Canada: [**api.ca.cr4ce.com**](http://api.ca.cr4ce.com)
+Hong Kong: [**api.hk.cr4ce.com**](http://api.hk.cr4ce.com)
 
 ## Request headers
 
@@ -101,7 +101,7 @@ POST and PUT requests expect JSON request bodies.
 | Array            | JSON array                                         | null            | ["Array element 1", "Array element 2"]                                         |
 | Boolean          | true / false                                       | null            | true                                                                           |
 | Slug             | 8 character string                                 | Never null      | "aBcDeFgH"                                                                     |
-| Date             | ISO 6801 Zulu standard                             | null            | “2020-10-08” OR “2020-12-08T08:58:50Z”                                         |
+| Date             | ISO 6801 Zulu standard                             | null            | "2020-10-08" OR "2020-12-08T08:58:50Z"                                         |
 | Table            | JSON object                                        | null            | {"slug": {"B1": "valueB1", "C1": "valueC1", "B2": "valueB2", "C2": "valueC2"}} |
 | Translated value | JSON object                                        | {"en_GB":""}    | {"en_GB":"Translated value"}                                                   |
 | Related resource | JSON object                                        | null            | {"slug":"aBcDeFgH", "name": {"en_GB":"Translated value"}}                      |
@@ -113,12 +113,12 @@ POST and PUT requests expect JSON request bodies.
 | Checkbox               | Boolean  | See "Boolean" type above.                                                                                                                                                       |
 | Checkbox list          | Array    | See "Array" type above. Options must exactly match the field value (not label) including letter case                                                                            |
 | Content                | String   | See "String" type above.                                                                                                                                                        |
-| Country                | String   | See "String" type above. Accepts the two-letter country code, per [this list](https://support.awardforce.com/hc/en-us/articles/360000237856-Two-letter-country-codes-in-fields) |
+| Country                | String   | See "String" type above. Accepts the two-letter country code, per [this list](https://support.awardforce.com/hc/en-us/articles/360000237856-Two-letter-country-codes-in-fields) |
 | Currency               | Float    | See "Float" type above.                                                                                                                                                         |
 | Date                   | Date     | See "Date" type above.                                                                                                                                                          |
 | Date and time          | Date     | See "Date" type above.                                                                                                                                                          |
 | Drop-down list         | String   | See "String" type above. Options must exactly match the field value (not label) including letter case.                                                                          |
-| Email                  | String   | See "String" type above. Must follow standard email format, i.e. [name@domain.com](mailto:name@domain.com)                                                                      |
+| Email                  | String   | See "String" type above. Must follow standard email format, i.e. [name@domain.com](mailto:name@domain.com)                                                                      |
 | File upload (single)   | -        | See "Upload entry file" or "Upload user file" endpoints                                                                                                                         |
 | Numeric                | Float    | See "Float" type above.                                                                                                                                                         |
 | Phone number           | String   | See "String" type above. International format, including leading + - must be a valid phone number.                                                                              |
@@ -162,7 +162,7 @@ Responses are provided in two formats: JSON and XML. Determining the format of y
 | Array            | JSON array                                         | null            | ["Array element 1", "Array element 2"]                    |
 | Boolean          | true / false                                       | null            | true                                                      |
 | Slug             | 8 character string                                 | Never null      | "aBcDeFgH"                                                |
-| Date             | ISO 6801 Zulu standard                             | null            | “2020-12-08T08:58:50Z"                                    |
+| Date             | ISO 6801 Zulu standard                             | null            | "2020-12-08T08:58:50Z"                                    |
 | Translated value | JSON object                                        | {"en_GB":""}    | {"en_GB":"Translated value"}                              |
 | Related resource | JSON object                                        | null            | {"slug":"aBcDeFgH", "name": {"en_GB":"Translated value"}} |
 
@@ -185,7 +185,7 @@ Responses are provided in two formats: JSON and XML. Determining the format of y
 
 ## POST responses
 
-Links to new resources can be found in the _Location_ response header.
+Links to new resources can be found in the _Location_ response header.
 
 ## Error responses
 
@@ -220,27 +220,27 @@ You can trigger webhooks based on some event such as new user registration or en
 
 ## Create a webhook
 
-1. In Award Force navigate to _Settings \> Integrations \> Webhooks_
-2. Click **New webhook**
-3. Enter **Name**
-4. Enter **Webhook URL**
-5. Use the auto-generated **Signing key** or create a new one
-6. Select the desired **Event subscriptions**
+1. In Award Force navigate to _Settings \> Integrations \> Webhooks_
+2. Click **New webhook**
+3. Enter **Name**
+4. Enter **Webhook URL**
+5. Use the auto-generated **Signing key** or create a new one
+6. Select the desired **Event subscriptions**
 7. (optional) Specify notification email addresses . Separate each address with a comma (,) or a semicolon (;)
-8. Click **Save**
+8. Click **Save**
 
 ## Edit webhook
 
-1. In Award Force navigate to _Settings \> Integrations \> Webhooks_
-2. Click on the **Name** of the webhook you wish to edit
+1. In Award Force navigate to _Settings \> Integrations \> Webhooks_
+2. Click on the **Name** of the webhook you wish to edit
 3. Make your changes
-4. Click **Save**
+4. Click **Save**
 
 ## Delete a webhook
 
-1. In Award Force navigate to _Settings \> Integrations \> Webhooks_
-2. Click the checkbox next to the webhook and delete it via the **Action** button
-3. Click **OK** in the confirmation dialog
+1. In Award Force navigate to _Settings \> Integrations \> Webhooks_
+2. Click the checkbox next to the webhook and delete it via the **Action** button
+3. Click **OK** in the confirmation dialog
 
 ## Webhook payloads
 
