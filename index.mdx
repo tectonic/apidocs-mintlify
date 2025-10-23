@@ -29,7 +29,7 @@ The following endpoints are currently being worked on and will be added soon:
 
 - Tab
 
-If you have any questions about our API or you would like to participate in our beta program, please feel free to send an email to [support@awardforce.com](mailto:support@awardforce.com)
+If you have any questions about our API or you would like to participate in our beta program, please feel free to email [support@awardforce.com](mailto:support@awardforce.com)
 
 # Authentication
 
@@ -82,7 +82,7 @@ Hong Kong: [**api.hk.cr4ce.com**](http://api.hk.cr4ce.com)
 ## Request headers
 
 | **Name**       | **Required** | **Allowed values**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | **Default value**        | **Description**                                   |
-| :------------- | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------- | :------------------------------------------------ |
+|:---------------|:-------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------|:--------------------------------------------------|
 | Accept         | Yes          | One of the following:<br /><br />application/vnd.Creative Force.v2.3+json<br />- application/vnd.Creative Force.v2.3+xml                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | None                     | Defines the response type.                        |
 | x-api-key      | Yes          | Valid API key                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | None                     | Used to authenticate and authorize the consumer.  |
 | x-api-language | No           | Comma separated string with one or more of the following:<br /><br />- all (will override any other values present)<br />- ar_AR<br />- bg_BG<br />- bn_IN<br />- ca_ES<br />- cs_CZ<br />- cy_GB<br />- da_DK<br />- de_DE<br />- en_GB<br />- en_US<br />- el_GR<br />- es_NN<br />- es_LA<br />- fa_NN<br />- fi_FI<br />- fr_FR<br />- fr_CA<br />- he_IL<br />- hi_IN<br />- it_IT<br />- ja_JP<br />- ko_KR<br />- lt_LT<br />- ms_MY<br />- nl_NL<br />- nb_NO<br />- pl_PL<br />- pt_BR<br />- ru_RU<br />- sl_SI<br />- sv_SE<br />- sw_NN<br />- th_TH<br />- uk_UA<br />- vi_VN<br />- zh_CN<br />- zh_HK | Account default language | Defines the languages to include in the response. |
@@ -94,7 +94,7 @@ POST and PUT requests expect JSON request bodies.
 ## Request body parameter types
 
 | **Type**         | **Format**                                         | **Empty value** | **Example**                                                                    |
-| :--------------- | :------------------------------------------------- | :-------------- | :----------------------------------------------------------------------------- |
+|:-----------------|:---------------------------------------------------|:----------------|:-------------------------------------------------------------------------------|
 | Integer          | Whole number                                       | null            | 1                                                                              |
 | Float            | Decimal number                                     | null            | 1.23                                                                           |
 | String           | Letters, numbers, characters wrapped in quotations | ""              | "String"                                                                       |
@@ -109,7 +109,7 @@ POST and PUT requests expect JSON request bodies.
 ## Fields expected data types
 
 | **Field**              | **Type** | **Description**                                                                                                                                                                 |
-| :--------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|:-----------------------|:---------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Checkbox               | Boolean  | See "Boolean" type above.                                                                                                                                                       |
 | Checkbox list          | Array    | See "Array" type above. Options must exactly match the field value (not label) including letter case                                                                            |
 | Content                | String   | See "String" type above.                                                                                                                                                        |
@@ -148,14 +148,14 @@ File upload endpoints accept base64 encoded strings representing the file you wi
 Responses are provided in two formats: JSON and XML. Determining the format of your response requires setting the Accept header to the appropriate value, as follows:
 
 | **Format** | **Header value**                         |
-| :--------- | :--------------------------------------- |
+|:-----------|:-----------------------------------------|
 | JSON       | application/vnd.Creative Force.v2.3+json |
 | XML        | application/vnd.Creative Force.v2.3+xml  |
 
 ## Response body parameter types
 
 | **Type**         | **Format**                                         | **Empty value** | **Example**                                               |
-| :--------------- | :------------------------------------------------- | :-------------- | :-------------------------------------------------------- |
+|:-----------------|:---------------------------------------------------|:----------------|:----------------------------------------------------------|
 | Integer          | Whole number                                       | null            | 1                                                         |
 | Float            | Decimal number                                     | null            | 1.23                                                      |
 | String           | Letters, numbers, characters wrapped in quotations | ""              | "String"                                                  |
@@ -169,7 +169,7 @@ Responses are provided in two formats: JSON and XML. Determining the format of y
 ## Paginated results
 
 | **Parameter**  | **Description**                                                    |
-| :------------- | :----------------------------------------------------------------- |
+|:---------------|:-------------------------------------------------------------------|
 | current_page   | Current page in the result set.                                    |
 | data           | Array containing resource information.                             |
 | first_page_url | Link to retrieve first page of result set.                         |
@@ -190,7 +190,7 @@ Links to new resources can be found in the _Location_ response header.
 ## Error responses
 
 | **Parameter** | **Description**                             |
-| :------------ | :------------------------------------------ |
+|:--------------|:--------------------------------------------|
 | message       | Error message                               |
 | errors        | Array containing specific error information |
 | status_code   | Error status code                           |
@@ -198,7 +198,7 @@ Links to new resources can be found in the _Location_ response header.
 ## Success codes
 
 | **Status code** | **Name**   | **Description**                                                                             |
-| :-------------- | :--------- | :------------------------------------------------------------------------------------------ |
+|:----------------|:-----------|:--------------------------------------------------------------------------------------------|
 | 200             | OK         | The request has succeeded.                                                                  |
 | 201             | CREATED    | The request has succeeded and a new resource has been created as a result.                  |
 | 204             | NO CONTENT | The request has succeeded but there is no content to send in the response for this request. |
@@ -206,7 +206,7 @@ Links to new resources can be found in the _Location_ response header.
 ## Error codes
 
 | **Status code** | **Name**             | **Description**                                                                                                            |
-| :-------------- | :------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+|:----------------|:---------------------|:---------------------------------------------------------------------------------------------------------------------------|
 | 400             | BAD REQUEST          | The server could not understand the request due to invalid syntax.                                                         |
 | 401             | UNAUTHORIZED         | Indicates that the request has not been applied because it lacks valid authentication credentials for the target resource. |
 | 403             | FORBIDDEN            | Indicates that the server understood the request but refuses to authorize it.                                              |
@@ -247,7 +247,7 @@ You can trigger webhooks based on some event such as new user registration or en
 Webhook payloads are provided in JSON format and always contain the following attributes:
 
 | **Name**  | **Description**                                                                                    |
-| :-------- | :------------------------------------------------------------------------------------------------- |
+|:----------|:---------------------------------------------------------------------------------------------------|
 | event     | Enumerated string with possible values being one of the events described in the following sections |
 | timestamp | ISO 8601 formatted datetime value.<br />i.e. `2020-01-01T00:00:00Z`                                |
 | source    | Enumerated string with the following possible values:<br />- `ui` (default)<br />- `api`           |
@@ -590,7 +590,7 @@ This is a list of changes to the API and the versions related to each new additi
 ## 18-04-2024
 
 - Added URL filter to `List webhooks` and `Get webhook` endpoints.
-- Added `signed_key` as part of webhoook endpoint responses.
+- Added `signed_key` as part of webhook endpoint responses.
 
 ## 31-05-2023
 
