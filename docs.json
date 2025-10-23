@@ -9,13 +9,10 @@
   },
   "favicon": "/af_favicon.png",
   "navigation": {
+    "pages": [
+      "introduction"
+    ],
     "tabs": [
-      {
-        "tab": "Introduction",
-        "pages": [
-          "introduction"
-        ]
-      },
       {
         "tab": "API reference",
         "openapi": "/api-reference/openapi.json"
