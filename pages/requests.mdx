@@ -1,0 +1,69 @@
+---
+title: "Requests"
+---
+
+The request URL is [api.cr4ce.com](http://api.cr4ce.com) however for optimal performance we recommend using our regional endpoints. Select the region to match your account location.
+
+US: [**api.us.cr4ce.com**](http://api.us.cr4ce.com) EU: [**api.eu.cr4ce.com**](http://api.eu.cr4ce.com) Australasia: [**api.au.cr4ce.com**](http://api.au.cr4ce.com) Canada: [**api.ca.cr4ce.com**](http://api.ca.cr4ce.com) Hong Kong: [**api.hk.cr4ce.com**](http://api.hk.cr4ce.com)
+
+### Request headers
+
+| **Name**       | **Required** | **Allowed values**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | **Default value**        | **Description**                                   |
+| :------------- | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------- | :------------------------------------------------ |
+| Accept         | Yes          | One of the following:<br /><br />application/vnd.Creative Force.v2.3+json<br />application/vnd.Creative Force.v2.3+xml                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | None                     | Defines the response type.                        |
+| x-api-key      | Yes          | Valid API key                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | None                     | Used to authenticate and authorize the consumer.  |
+| x-api-language | No           | Comma separated string with one or more of the following:<br /><br />- all (will override any other values present)<br />- ar_AR<br />- bg_BG<br />- bn_IN<br />- ca_ES<br />- cs_CZ<br />- cy_GB<br />- da_DK<br />- de_DE<br />- en_GB<br />- en_US<br />- el_GR<br />- es_NN<br />- es_LA<br />- fa_NN<br />- fi_FI<br />- fr_FR<br />- fr_CA<br />- he_IL<br />- hi_IN<br />- it_IT<br />- ja_JP<br />- ko_KR<br />- lt_LT<br />- ms_MY<br />- nl_NL<br />- nb_NO<br />- pl_PL<br />- pt_BR<br />- ru_RU<br />- sl_SI<br />- sv_SE<br />- sw_NN<br />- th_TH<br />- uk_UA<br />- vi_VN<br />- zh_CN<br />- zh_HK | Account default language | Defines the languages to include in the response. |
+
+### Request body
+
+POST and PUT requests expect JSON request bodies.
+
+### Request body parameter types
+
+| **Type**         | **Format**                                         | **Empty value** | **Example**                                                                      |
+| :--------------- | :------------------------------------------------- | :-------------- | :------------------------------------------------------------------------------- |
+| Integer          | Whole number                                       | `null`          | `1`                                                                              |
+| Float            | Decimal number                                     | `null`          | `1.23`                                                                           |
+| String           | Letters, numbers, characters wrapped in quotations | `""`            | `"String"`                                                                       |
+| Array            | JSON array                                         | `null`          | `["Array element 1", "Array element 2"]`                                         |
+| Boolean          | `true` / `false`                                   | `null`          | `true`                                                                           |
+| Slug             | 8 character string                                 | Never null      | `"aBcDeFgH"`                                                                     |
+| Date             | ISO 8601 Zulu standard                             | `null`          | `"2020-10-08"` OR `"2020-12-08T08:58:50Z"`                                       |
+| Table            | JSON object                                        | `null`          | `{"slug": {"B1": "valueB1", "C1": "valueC1", "B2": "valueB2", "C2": "valueC2"}}` |
+| Translated value | JSON object                                        | `{"en_GB":""}`  | `{"en_GB":"Translated value"}`                                                   |
+| Related resource | JSON object                                        | `null`          | `{"slug":"aBcDeFgH", "name": {"en_GB":"Translated value"}}`                      |
+
+### Fields expected data types
+
+| **Field**              | **Type** | **Description**                                                                                                                                                                 |
+| :--------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Checkbox               | Boolean  | See "Boolean" type above.                                                                                                                                                       |
+| Checkbox list          | Array    | See "Array" type above. Options must exactly match the field value (not label) including letter case                                                                            |
+| Content                | String   | See "String" type above.                                                                                                                                                        |
+| Country                | String   | See "String" type above. Accepts the two-letter country code, per [this list](https://support.awardforce.com/hc/en-us/articles/360000237856-Two-letter-country-codes-in-fields) |
+| Currency               | Float    | See "Float" type above.                                                                                                                                                         |
+| Date                   | Date     | See "Date" type above.                                                                                                                                                          |
+| Date and time          | Date     | See "Date" type above.                                                                                                                                                          |
+| Drop-down list         | String   | See "String" type above. Options must exactly match the field value (not label) including letter case.                                                                          |
+| Email                  | String   | See "String" type above. Must follow standard email format, i.e. [name@domain.com](mailto:name@domain.com)                                                                      |
+| File upload (single)   | -        | See "Upload entry file" or "Upload user file" endpoints                                                                                                                         |
+| Numeric                | Float    | See "Float" type above.                                                                                                                                                         |
+| Phone number           | String   | See "String" type above. International format, including leading + - must be a valid phone number.                                                                              |
+| Radio buttons          | String   | See "String" type above. Options must exactly match the field value (not label) including letter case.                                                                          |
+| Table                  | -        | See "Table" type above                                                                                                                                                          |
+| Text (single line)     | String   | See "String" type above.                                                                                                                                                        |
+| Text area (multi-line) | String   | See "String" type above.                                                                                                                                                        |
+| Time                   | String   | See "String" type above.                                                                                                                                                        |
+| URL                    | String   | See "String" type above. Must begin with "https://".                                                                                                                            |
+
+### Rate limiting
+
+Rate limiting is set at 60 requests per API key per 60 seconds. Any requests received beyond this will result in a 429 response.
+
+### File upload size limit
+
+File uploads are limited to a maximum file size of 256 MB. Any request containing a file greater than this value will result in a 413 response.
+
+### Base64 encoding
+
+File upload endpoints accept base64 encoded strings representing the file you wish to upload. Many popular programming languages support converting files to a base64 encoded string. Alternatively if you are using an API client you can find websites online for converting an image to a base64 encoded string.

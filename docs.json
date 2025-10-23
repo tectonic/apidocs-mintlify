@@ -9,14 +9,14 @@
   },
   "favicon": "/af_favicon.png",  
   "navigation": {
-    "groups": [
-      {
-        "group": "API reference",
-        "openapi": "/api-reference/openapi.json",
-        "pages": [
-          "guide"
-        ]
-      }
+    "pages": [
+      "introduction",
+      "authentication",
+      "requests",
+      "responses",
+      "webhooks",
+      "versioning",
+      "changelog"
     ]
   },
   "logo": {

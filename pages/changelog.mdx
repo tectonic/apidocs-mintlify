@@ -1,0 +1,106 @@
+---
+title: "Changelog"
+---
+
+This is a list of changes to the API and the versions related to each new addition. If you want to access features in the latest version you'll need to update the version number in the accept header in your request.
+
+**06-05-2025 : [Breaking changes - upgrade to version 2.3]**
+
+- All `contributor` responses now return contributors as an object with their related slug, tab and contributor field objects.
+- All `attachment` responses now return a tab object for each attachment.
+
+**14-04-2025**
+
+- Endpoint added for leaderboard search
+
+**20-03-2025**
+
+- Fixed the comments response payload in the assignments `GET` endpoints.
+
+**13-01-2025**
+
+- Endpoints added for realtime entries
+
+**27-11-2024**
+
+- Endpoints for listing and viewing review tasks have been added
+
+**13-11-2024**
+
+- A new `items_array` field has been added to the list and get order endpoints, which returns an array of order item objects
+
+**30-10-2024**
+
+- ISO 8601 Zulu format is now accepted on all dates and date time entry, user, and contributor fields
+- Entry, user, and contributor fields are now returned in ISO 8601 Zulu format
+
+**03-10-2024**
+
+- ISO 8601 Zulu format is now a supported date format in `date_due` and `date_paid` fields in allocation payment endpoints
+- Dates and date times are now returned in ISO 8601 Zulu format in allocation payment endpoints
+- The `reference` field now returns as `null` if it's not provided, instead of `''`
+
+**05-09-2024 : [Breaking changes - upgrade to version 2.2]**
+
+- All `form` fields in responses now return as an object with the slug, name, and link fields
+- All `name` and `description` fields now return as an object with translations for the requested language
+- The `managers` field in create/update/get/list chapter endpoints have been updated to an array of manager objects with the slug, first_name, last_name, and link fields
+- Many payload and response consistency improvements in various fields that are checkbox, date, or datetime types
+
+**21-08-2024**
+
+- Fixed `scoreset` `name` property to return translations
+
+**08-08-2024**
+
+- Added `assignment` endpoints
+- Added ability to `recuse` and `unrecuse` assignments
+
+**01-08-2024**
+
+- Added `custom_deadline` field in create/update/get/list entry endpoints
+
+**24-07-2024**
+
+- Added `Get account` endpoint
+
+**29-05-2024**
+
+- Added `list rounds` and `Get round` endpoints
+
+**18-04-2024**
+
+- Added URL filter to `List webhooks` and `Get webhook` endpoints.
+- Added `signed_key` as part of webhook endpoint responses.
+
+**31-05-2023**
+
+- Contributor endpoint added to facilitate viewing, updating and deleting contributors.
+
+**08-08-2022**
+
+- Form slug added to:
+- Query params and response body for `List categories` endpoint
+- Response body for `Get category` endpoint
+- Request body and response body for `Create category` endpoint
+- Response body for `Update category` endpoint
+- Query params and response body for `List entries` endpoint
+- Response body for `Get entries` endpoint
+- Request body and response body for `Create entries` endpoint
+- Response body for `Update entries` endpoint
+- Query params and response body for `List fields` endpoint
+
+**23-08-2021**
+
+- Added `List fields` endpoint
+
+**24-06-2021 : [Breaking changes - upgrade to version 2.1]**
+
+- Attachment endpoints added to facilitate viewing, updating and deleting attachments.
+- `name` changed to `filename` in the response body for get attachment, list attachments, update attachment, get category and get entry endpoints.
+- `name` changed to `filename` in the request body for upload entry file, upload entry attachment, upload chapter file, upload user file endpoints.
+- `filename`, `token`, `download` and `link` grouped under `file` in the response body for the upload entry attachment and get entry endpoints.
+
+**17-08-2020**
+
+- Added webhooks
