@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Award Force API documentation",
+  "name": "Award Force API",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -11,20 +11,18 @@
   "navigation": {
     "tabs": [
       {
+        "tab": "Introduction",
+        "pages": "index"
+      },
+      {
         "tab": "API reference",
         "openapi": "/api-reference/openapi.json"
       }
-    ],
-    "global": {
-      "anchors": []
-    }
+    ]
   },
   "logo": {
     "light": "/logo/af_logo.png",
     "dark": "/logo/af_logo.png"
-  },
-  "navbar": {
-    "links": []
   },
   "contextual": {
     "options": [
@@ -37,7 +35,5 @@
       "cursor",
       "vscode"
     ]
-  },
-  "footer": {
   }
 }
