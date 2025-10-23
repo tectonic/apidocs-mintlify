@@ -7,7 +7,7 @@
     "light": "#07C983",
     "dark": "#15803D"
   },
-  "favicon": "/af-favicon.png",
+  "favicon": "/af_favicon.png",
   "navigation": {
     "tabs": [
       {
@@ -20,8 +20,8 @@
     }
   },
   "logo": {
-    "light": "/logo/af-logo.png",
-    "dark": "/logo/af-logo.png"
+    "light": "/logo/af_logo.png",
+    "dark": "/logo/af_logo.png"
   },
   "navbar": {
     "links": []
