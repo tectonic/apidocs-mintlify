@@ -9,16 +9,9 @@
   },
   "favicon": "/af_favicon.png",
   "navigation": {
-    "tabs": [
-        {
-          "tab": "Guide",
-          "href": "guide"
-        },
-        {
-          "tab": "API reference",
-          "openapi": "/api-reference/openapi.json"
-        }
-      ]
+    "pages": [
+      "guide"
+    ]
   },
   "logo": {
     "light": "/logo/af_logo.png",
