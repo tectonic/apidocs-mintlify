@@ -3,6 +3,8 @@ title: "Award Force API documentation"
 description: "The information below can be used by your engineering team or developers to pass data from the Award Force application to other websites or applications."
 ---
 
+## Introduction
+
 With our API, you can list, get, create, update, delete and upload many different resources:
 
 - Account
@@ -31,85 +33,79 @@ The following endpoints are currently being worked on and will be added soon:
 
 If you have any questions about our API or you would like to participate in our beta program, please feel free to email [support@awardforce.com](mailto:support@awardforce.com)
 
-# Authentication
+## Authentication
 
 Access to the Award Force API is secured via API Keys. You may generate as many keys as you like yet each key belongs to the one account. The scope of the key determines the permissions of the key:
 
-Read only - for read endpoints only
-Read / Write - for read and write endpoints
+Read only - for read endpoints only Read / Write - for read and write endpoints
 
 Multiple email addresses may be specified for receiving notification emails.
 
-## Generate API key
+### Generate API key
 
-1. In Award Force navigate to _Settings > Integrations > API Keys_
+1. In Award Force navigate to _Settings \> Integrations \> API Keys_
 2. Click **Generate API Key**
 3. Enter **Key name / purpose**
 4. Select **Scope**
-    1. Read only - for read endpoints only
-    2. Read / Write - for read and write endpoints
-5. Specify notification email addresses (optional). Separate each address with a comma (,) or a semicolon (;)
-6. Click **Save**
+   1. Read only - for read endpoints only
+   2. Read / Write - for read and write endpoints
+1. Specify notification email addresses (optional). Separate each address with a comma (,) or a semicolon (;)
+2. Click **Save**
 
-## Edit API key
+### Edit API key
 
-1. In Award Force navigate to _Settings > Integrations > API Keys_
-2. Click on the **Key name / purpose** of the key you
-wish to edit OR click on the overflow action menu of the key you wish to edit and click **Edit**
+1. In Award Force navigate to _Settings \> Integrations \> API Keys_
+2. Click on the **Key name / purpose** of the key you wish to edit OR click on the overflow action menu of the key you wish to edit and click **Edit**
 3. Update **Key name / purpose**
 4. Update **Scope**
-    1. Read only - for read endpoints only
-    2. Read / Write - for read and write endpoints
-5. Update notification email addresses (optional). Separate each address with a comma (,) or a semicolon (;)
-6. Click **Save**
+   1. Read only - for read endpoints only
+   2. Read / Write - for read and write endpoints
+1. Update notification email addresses (optional). Separate each address with a comma (,) or a semicolon (;)
+2. Click **Save**
 
-## Revoke API key
+### Revoke API key
 
-1. In Award Force navigate to _Settings > Integrations > API Keys_
+1. In Award Force navigate to _Settings \> Integrations \> API Keys_
 2. Click on the overflow action menu of the key you wish to edit and click **Revoke**
 3. Click **OK** in the confirm dialog
 
-# Requests
+## Requests
 
 The request URL is [api.cr4ce.com](http://api.cr4ce.com) however for optimal performance we recommend using our regional endpoints. Select the region to match your account location.
 
-US: [**api.us.cr4ce.com**](http://api.us.cr4ce.com)
-EU: [**api.eu.cr4ce.com**](http://api.eu.cr4ce.com)
-Australasia: [**api.au.cr4ce.com**](http://api.au.cr4ce.com)
-Canada: [**api.ca.cr4ce.com**](http://api.ca.cr4ce.com)
-Hong Kong: [**api.hk.cr4ce.com**](http://api.hk.cr4ce.com)
+US: [**api.us.cr4ce.com**](http://api.us.cr4ce.com) EU: [**api.eu.cr4ce.com**](http://api.eu.cr4ce.com) Australasia: [**api.au.cr4ce.com**](http://api.au.cr4ce.com) Canada: [**api.ca.cr4ce.com**](http://api.ca.cr4ce.com) Hong Kong: [**api.hk.cr4ce.com**](http://api.hk.cr4ce.com)
 
-## Request headers
+### Request headers
 
 | **Name**       | **Required** | **Allowed values**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | **Default value**        | **Description**                                   |
-|:---------------|:-------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------|:--------------------------------------------------|
+| :------------- | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------- | :------------------------------------------------ |
 | Accept         | Yes          | One of the following:<br /><br />application/vnd.Creative Force.v2.3+json<br />application/vnd.Creative Force.v2.3+xml                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | None                     | Defines the response type.                        |
 | x-api-key      | Yes          | Valid API key                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | None                     | Used to authenticate and authorize the consumer.  |
 | x-api-language | No           | Comma separated string with one or more of the following:<br /><br />- all (will override any other values present)<br />- ar_AR<br />- bg_BG<br />- bn_IN<br />- ca_ES<br />- cs_CZ<br />- cy_GB<br />- da_DK<br />- de_DE<br />- en_GB<br />- en_US<br />- el_GR<br />- es_NN<br />- es_LA<br />- fa_NN<br />- fi_FI<br />- fr_FR<br />- fr_CA<br />- he_IL<br />- hi_IN<br />- it_IT<br />- ja_JP<br />- ko_KR<br />- lt_LT<br />- ms_MY<br />- nl_NL<br />- nb_NO<br />- pl_PL<br />- pt_BR<br />- ru_RU<br />- sl_SI<br />- sv_SE<br />- sw_NN<br />- th_TH<br />- uk_UA<br />- vi_VN<br />- zh_CN<br />- zh_HK | Account default language | Defines the languages to include in the response. |
 
-## Request body
+### Request body
 
 POST and PUT requests expect JSON request bodies.
 
-## Request body parameter types
+### Request body parameter types
 
-| **Type**         | **Format**                                         | **Empty value** | **Example**                                                                                  |
-|:-----------------|:---------------------------------------------------|:----------------|:---------------------------------------------------------------------------------------------|
-| Integer          | Whole number                                       | `null`          | `1`                                                                                          |
-| Float            | Decimal number                                     | `null`          | `1.23`                                                                                       |
-| String           | Letters, numbers, characters wrapped in quotations | `""`            | `"String"`                                                                                   |
-| Array            | JSON array                                         | `null`          | `["Array element 1", "Array element 2"]`                                                     |
-| Boolean          | `true` / `false`                                   | `null`          | `true`                                                                                       |
-| Slug             | 8 character string                                 | Never null      | `"aBcDeFgH"`                                                                                 |
-| Date             | ISO 8601 Zulu standard                             | `null`          | `"2020-10-08"` OR `"2020-12-08T08:58:50Z"`                                                   |
-| Table            | JSON object                                        | `null`          | `{"slug": {"B1": "valueB1", "C1": "valueC1", "B2": "valueB2", "C2": "valueC2"}}`             |
-| Translated value | JSON object                                        | `{"en_GB":""}`  | `{"en_GB":"Translated value"}`                                                               |
-| Related resource | JSON object                                        | `null`          | `{"slug":"aBcDeFgH", "name": {"en_GB":"Translated value"}}`                                  |
+| **Type**         | **Format**                                         | **Empty value** | **Example**                                                                      |
+| :--------------- | :------------------------------------------------- | :-------------- | :------------------------------------------------------------------------------- |
+| Integer          | Whole number                                       | `null`          | `1`                                                                              |
+| Float            | Decimal number                                     | `null`          | `1.23`                                                                           |
+| String           | Letters, numbers, characters wrapped in quotations | `""`            | `"String"`                                                                       |
+| Array            | JSON array                                         | `null`          | `["Array element 1", "Array element 2"]`                                         |
+| Boolean          | `true` / `false`                                   | `null`          | `true`                                                                           |
+| Slug             | 8 character string                                 | Never null      | `"aBcDeFgH"`                                                                     |
+| Date             | ISO 8601 Zulu standard                             | `null`          | `"2020-10-08"` OR `"2020-12-08T08:58:50Z"`                                       |
+| Table            | JSON object                                        | `null`          | `{"slug": {"B1": "valueB1", "C1": "valueC1", "B2": "valueB2", "C2": "valueC2"}}` |
+| Translated value | JSON object                                        | `{"en_GB":""}`  | `{"en_GB":"Translated value"}`                                                   |
+| Related resource | JSON object                                        | `null`          | `{"slug":"aBcDeFgH", "name": {"en_GB":"Translated value"}}`                      |
 
-## Fields expected data types
+### Fields expected data types
 
 | **Field**              | **Type** | **Description**                                                                                                                                                                 |
-|:-----------------------|:---------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :--------------------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Checkbox               | Boolean  | See "Boolean" type above.                                                                                                                                                       |
 | Checkbox list          | Array    | See "Array" type above. Options must exactly match the field value (not label) including letter case                                                                            |
 | Content                | String   | See "String" type above.                                                                                                                                                        |
@@ -129,33 +125,33 @@ POST and PUT requests expect JSON request bodies.
 | Time                   | String   | See "String" type above.                                                                                                                                                        |
 | URL                    | String   | See "String" type above. Must begin with "https://".                                                                                                                            |
 
-## Rate limiting
+### Rate limiting
 
 Rate limiting is set at 60 requests per API key per 60 seconds. Any requests received beyond this will result in a 429 response.
 
-## File upload size limit
+### File upload size limit
 
 File uploads are limited to a maximum file size of 256 MB. Any request containing a file greater than this value will result in a 413 response.
 
-## Base64 encoding
+### Base64 encoding
 
 File upload endpoints accept base64 encoded strings representing the file you wish to upload. Many popular programming languages support converting files to a base64 encoded string. Alternatively if you are using an API client you can find websites online for converting an image to a base64 encoded string.
 
-# Responses
+## Responses
 
-## Response formats
+### Response formats
 
 Responses are provided in two formats: JSON and XML. Determining the format of your response requires setting the Accept header to the appropriate value, as follows:
 
 | **Format** | **Header value**                         |
-|:-----------|:-----------------------------------------|
+| :--------- | :--------------------------------------- |
 | JSON       | application/vnd.Creative Force.v2.3+json |
 | XML        | application/vnd.Creative Force.v2.3+xml  |
 
-## Response body parameter types
+### Response body parameter types
 
 | **Type**         | **Format**                                         | **Empty value** | **Example**                                                 |
-|:-----------------|:---------------------------------------------------|:----------------|:------------------------------------------------------------|
+| :--------------- | :------------------------------------------------- | :-------------- | :---------------------------------------------------------- |
 | Integer          | Whole number                                       | `null`          | `1`                                                         |
 | Float            | Decimal number                                     | `null`          | `1.23`                                                      |
 | String           | Letters, numbers, characters wrapped in quotations | `""`            | `"String"`                                                  |
@@ -166,10 +162,10 @@ Responses are provided in two formats: JSON and XML. Determining the format of y
 | Translated value | JSON object                                        | `{"en_GB":""}`  | `{"en_GB":"Translated value"}`                              |
 | Related resource | JSON object                                        | `null`          | `{"slug":"aBcDeFgH", "name": {"en_GB":"Translated value"}}` |
 
-## Paginated results
+### Paginated results
 
 | **Parameter**  | **Description**                                                    |
-|:---------------|:-------------------------------------------------------------------|
+| :------------- | :----------------------------------------------------------------- |
 | current_page   | Current page in the result set.                                    |
 | data           | Array containing resource information.                             |
 | first_page_url | Link to retrieve first page of result set.                         |
@@ -183,30 +179,30 @@ Responses are provided in two formats: JSON and XML. Determining the format of y
 | to             | Number of the last result in this page of the result set.          |
 | total          | Total number of results in the result set.                         |
 
-## POST responses
+### POST responses
 
 Links to new resources can be found in the _Location_ response header.
 
-## Error responses
+### Error responses
 
 | **Parameter** | **Description**                             |
-|:--------------|:--------------------------------------------|
+| :------------ | :------------------------------------------ |
 | message       | Error message                               |
 | errors        | Array containing specific error information |
 | status_code   | Error status code                           |
 
-## Success codes
+### Success codes
 
 | **Status code** | **Name**   | **Description**                                                                             |
-|:----------------|:-----------|:--------------------------------------------------------------------------------------------|
+| :-------------- | :--------- | :------------------------------------------------------------------------------------------ |
 | 200             | OK         | The request has succeeded.                                                                  |
 | 201             | CREATED    | The request has succeeded and a new resource has been created as a result.                  |
 | 204             | NO CONTENT | The request has succeeded but there is no content to send in the response for this request. |
 
-## Error codes
+### Error codes
 
 | **Status code** | **Name**             | **Description**                                                                                                            |
-|:----------------|:---------------------|:---------------------------------------------------------------------------------------------------------------------------|
+| :-------------- | :------------------- | :------------------------------------------------------------------------------------------------------------------------- |
 | 400             | BAD REQUEST          | The server could not understand the request due to invalid syntax.                                                         |
 | 401             | UNAUTHORIZED         | Indicates that the request has not been applied because it lacks valid authentication credentials for the target resource. |
 | 403             | FORBIDDEN            | Indicates that the server understood the request but refuses to authorize it.                                              |
@@ -214,13 +210,13 @@ Links to new resources can be found in the _Location_ response header.
 | 422             | UNPROCESSABLE ENTITY | The request was well-formed but was unable to be followed due to semantic errors.                                          |
 | 429             | TOO MANY REQUESTS    | The user has sent too many requests in a given amount of time.                                                             |
 
-# Webhooks
+## Webhooks
 
 You can trigger webhooks based on some event such as new user registration or entry submission. This will let you get data or perform tasks based on actions in your program. Only program managers can create webhooks.
 
-## Create a webhook
+### Create a webhook
 
-1. In Award Force navigate to _Settings > Integrations > Webhooks_
+1. In Award Force navigate to _Settings \> Integrations \> Webhooks_
 2. Click **New webhook**
 3. Enter **Name**
 4. Enter **Webhook URL**
@@ -229,33 +225,32 @@ You can trigger webhooks based on some event such as new user registration or en
 7. (optional) Specify notification email addresses . Separate each address with a comma (,) or a semicolon (;)
 8. Click **Save**
 
-## Edit webhook
+### Edit webhook
 
-1. In Award Force navigate to _Settings > Integrations > Webhooks_
+1. In Award Force navigate to _Settings \> Integrations \> Webhooks_
 2. Click on the **Name** of the webhook you wish to edit
 3. Make your changes
 4. Click **Save**
 
-## Delete a webhook
+### Delete a webhook
 
-1. In Award Force navigate to _Settings > Integrations > Webhooks_
+1. In Award Force navigate to _Settings \> Integrations \> Webhooks_
 2. Click the checkbox next to the webhook and delete it via the **Action** button
 3. Click **OK** in the confirmation dialog
 
-## Webhook payloads
+### Webhook payloads
 
 Webhook payloads are provided in JSON format and always contain the following attributes:
 
 | **Name**  | **Description**                                                                                    |
-|:----------|:---------------------------------------------------------------------------------------------------|
+| :-------- | :------------------------------------------------------------------------------------------------- |
 | event     | Enumerated string with possible values being one of the events described in the following sections |
 | timestamp | ISO 8601 formatted datetime value.<br />i.e. `2020-01-01T00:00:00Z`                                |
 | source    | Enumerated string with the following possible values:<br />- `ui` (default)<br />- `api`           |
 
-#### Signature
+### Signature
 
-You will receive a **Signature** header which you can use to validate the webhook payload.
-The signature value is generated with this algorithm, using the **Signing key** specified in your webhook and the JSON payload:
+You will receive a **Signature** header which you can use to validate the webhook payload. The signature value is generated with this algorithm, using the **Signing key** specified in your webhook and the JSON payload:
 
 ```php
 $signature = hash_hmac('sha256', $payloadJsonString, $signingKey);
@@ -263,7 +258,7 @@ $signature = hash_hmac('sha256', $payloadJsonString, $signingKey);
 
 You can do the same in your endpoint and compare the header **Signature** value with the one you generated with this algorithm.
 
-#### Available event subscriptions
+### Available event subscriptions
 
 **Entry events**
 
@@ -502,97 +497,95 @@ You can do the same in your endpoint and compare the header **Signature** value 
 - document_deleted
 - document_updated
 
-# Versioning
+## Versioning
 
 At Award Force, we use semantic versioning, which follows this format:
 
 - **MAJOR** version: Incremented for incompatible changes.
 - **MINOR** version: Incremented for minor breaking changes.
 
-This documentation will always refer to the latest version of the API. In the case of version updates, the changelog below indicates when these occurred. The latest version of the API is 2.3 which is reflected in the Accept header.
-`application/vnd.Creative Force.v2.3+json`
-`application/vnd.Creative Force.v2.3+xml`
+This documentation will always refer to the latest version of the API. In the case of version updates, the changelog below indicates when these occurred. The latest version of the API is 2.3 which is reflected in the Accept header. `application/vnd.Creative Force.v2.3+json` `application/vnd.Creative Force.v2.3+xml`
 
 To use an old API version, replace `2.3` with the version number.
 
-# Changelog
+## Changelog
 
 This is a list of changes to the API and the versions related to each new addition. If you want to access features in the latest version you'll need to update the version number in the accept header in your request.
 
-## 06-05-2025 : [Breaking changes - upgrade to version 2.3]
+**06-05-2025 : [Breaking changes - upgrade to version 2.3]**
 
 - All `contributor` responses now return contributors as an object with their related slug, tab and contributor field objects.
 - All `attachment` responses now return a tab object for each attachment.
 
-## 14-04-2025
+**14-04-2025**
 
 - Endpoint added for leaderboard search
 
-## 20-03-2025
+**20-03-2025**
 
 - Fixed the comments response payload in the assignments `GET` endpoints.
 
-## 13-01-2025
+**13-01-2025**
 
 - Endpoints added for realtime entries
 
-## 27-11-2024
+**27-11-2024**
 
 - Endpoints for listing and viewing review tasks have been added
 
-## 13-11-2024
+**13-11-2024**
 
 - A new `items_array` field has been added to the list and get order endpoints, which returns an array of order item objects
 
-## 30-10-2024
+**30-10-2024**
 
 - ISO 8601 Zulu format is now accepted on all dates and date time entry, user, and contributor fields
 - Entry, user, and contributor fields are now returned in ISO 8601 Zulu format
 
-## 03-10-2024
+**03-10-2024**
 
 - ISO 8601 Zulu format is now a supported date format in `date_due` and `date_paid` fields in allocation payment endpoints
 - Dates and date times are now returned in ISO 8601 Zulu format in allocation payment endpoints
 - The `reference` field now returns as `null` if it's not provided, instead of `''`
 
-## 05-09-2024 : [Breaking changes - upgrade to version 2.2]
+**05-09-2024 : [Breaking changes - upgrade to version 2.2]**
 
 - All `form` fields in responses now return as an object with the slug, name, and link fields
 - All `name` and `description` fields now return as an object with translations for the requested language
 - The `managers` field in create/update/get/list chapter endpoints have been updated to an array of manager objects with the slug, first_name, last_name, and link fields
 - Many payload and response consistency improvements in various fields that are checkbox, date, or datetime types
 
-## 21-08-2024
+**21-08-2024**
 
 - Fixed `scoreset` `name` property to return translations
 
-## 08-08-2024
+**08-08-2024**
 
 - Added `assignment` endpoints
 - Added ability to `recuse` and `unrecuse` assignments
 
-## 01-08-2024
+**01-08-2024**
 
 - Added `custom_deadline` field in create/update/get/list entry endpoints
 
-## 24-07-2024
+**24-07-2024**
 
 - Added `Get account` endpoint
 
-## 29-05-2024
+**29-05-2024**
 
 - Added `list rounds` and `Get round` endpoints
 
-## 18-04-2024
+**18-04-2024**
 
 - Added URL filter to `List webhooks` and `Get webhook` endpoints.
 - Added `signed_key` as part of webhook endpoint responses.
 
-## 31-05-2023
+**31-05-2023**
 
 - Contributor endpoint added to facilitate viewing, updating and deleting contributors.
 
-## 08-08-2022
+**08-08-2022**
 
 - Form slug added to:
 - Query params and response body for `List categories` endpoint
@@ -605,17 +598,17 @@ This is a list of changes to the API and the versions related to each new additi
 - Response body for `Update entries` endpoint
 - Query params and response body for `List fields` endpoint
 
-## 23-08-2021
+**23-08-2021**
 
 - Added `List fields` endpoint
 
-## 24-06-2021 : [Breaking changes - upgrade to version 2.1]
+**24-06-2021 : [Breaking changes - upgrade to version 2.1]**
 
 - Attachment endpoints added to facilitate viewing, updating and deleting attachments.
 - `name` changed to `filename` in the response body for get attachment, list attachments, update attachment, get category and get entry endpoints.
 - `name` changed to `filename` in the request body for upload entry file, upload entry attachment, upload chapter file, upload user file endpoints.
 - `filename`, `token`, `download` and `link` grouped under `file` in the response body for the upload entry attachment and get entry endpoints.
 
-## 17-08-2020
+**17-08-2020**
 
 - Added webhooks
