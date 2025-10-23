@@ -9,15 +9,24 @@
   },
   "favicon": "/af_favicon.png",  
   "navigation": {
-    "pages": [
-      "/pages/introduction",
-      "/pages/authentication",
-      "/pages/requests",
-      "/pages/responses",
-      "/pages/webhooks",
-      "/pages/versioning",
-      "/pages/changelog"
-    ]
+    "groups": [
+      {
+        "group": "Getting started",
+        "pages": [
+          "/pages/introduction",
+          "/pages/authentication",
+          "/pages/requests",
+          "/pages/responses",
+          "/pages/webhooks",
+          "/pages/versioning",
+          "/pages/changelog"
+        ]
+      },
+      {
+        "group": "API reference",
+        "openapi": "/api-reference/openapi.json"
+      }
+    ]    
   },
   "logo": {
     "light": "/logo/af_logo.png",
