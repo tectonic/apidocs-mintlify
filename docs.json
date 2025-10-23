@@ -7,10 +7,16 @@
     "light": "#07C983",
     "dark": "#15803D"
   },
-  "favicon": "/af_favicon.png",
+  "favicon": "/af_favicon.png",  
   "navigation": {
-    "pages": [
-      "guide"
+    "groups": [
+      {
+        "group": "API reference",
+        "openapi": "/api-reference/openapi.json",
+        "pages": [
+          "guide"
+        ]
+      }
     ]
   },
   "logo": {
