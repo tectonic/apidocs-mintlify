@@ -1,0 +1,56 @@
+---
+title: "Recuse assignment"
+description: "Recuse a judge from an existing assignment."
+api: PUT https://api.cr4ce.com/entry/{slug}/recuse
+contentType: application/json
+---
+
+
+### PATH VARIABLES
+
+<ParamField path="slug" type="string" required>
+Entry slug
+</ParamField>
+
+### Headers
+
+<ParamField path="Accept" type="string" required>
+Defines the response format.
+</ParamField>
+
+<ParamField path="x-api-key" type="string" required>
+Used for authentication and authorisation.
+</ParamField>
+
+<ParamField path="x-api-language" type="string">
+Defines expected language.
+</ParamField>
+
+### Body
+
+<ParamField path="judge" type="string" required>
+Judge slug
+</ParamField>
+
+<ParamField path="score_set" type="string">
+Score Set slug
+</ParamField>
+
+```bash json
+{
+  "judge": "AqkYpvoL",
+  "score_set": "lQooYAjX"
+}
+```
+
+## Responses
+
+### 200
+Success
+
+<ResponseExample>
+
+```bash RESPONSE 200
+No response body
+```
+</ResponseExample>

@@ -1,73 +1,76 @@
 ---
 title: "Webhooks"
+description: "You can trigger webhooks based on some event such as new user registration or entry submission. This will let you get data or perform tasks based on actions in your program. Only program managers can create webhooks."
 ---
 
-You can trigger webhooks based on some event such as new user registration or entry submission. This will let you get data or perform tasks based on actions in your program. Only program managers can create webhooks.
+## Create a webhook
+<Steps>
+<Step title="In Award Force navigate to Settings > Integrations > Webhooks"/>
+<Step title="Click New webhook"/>
+<Step title="Enter Name"/>
+<Step title="Enter Webhook URL"/>
+<Step title="Use the auto-generated Signing key or create a new one"/>
+<Step title="Select the desired Event subscriptions"/>
+<Step title="(optional) Specify notification email addresses. Separate each address with a comma (,) or a semicolon (;)"/>
+<Step title="Click Save"/>
+</Steps>
+## Edit webhook
+<Steps>
+<Step title="In Award Force navigate to Settings > Integrations > Webhooks"/>
+<Step title="Click on the Name of the webhook you wish to edit"/>
+<Step title="Make your changes"/>
+<Step title="Click Save"/>
+</Steps>
 
-### Create a webhook
+## Delete a webhook
+<Steps>
+<Step title="In Award Force navigate to Settings > Integrations > Webhooks"/>
+<Step title="Click the checkbox next to the webhook and delete it via the Action button"/>
+<Step title="Click OK in the confirmation dialog"/>
+</Steps>
 
-1. In Award Force navigate to _Settings \> Integrations \> Webhooks_
-2. Click **New webhook**
-3. Enter **Name**
-4. Enter **Webhook URL**
-5. Use the auto-generated **Signing key** or create a new one
-6. Select the desired **Event subscriptions**
-7. (optional) Specify notification email addresses . Separate each address with a comma (,) or a semicolon (;)
-8. Click **Save**
 
-### Edit webhook
-
-1. In Award Force navigate to _Settings \> Integrations \> Webhooks_
-2. Click on the **Name** of the webhook you wish to edit
-3. Make your changes
-4. Click **Save**
-
-### Delete a webhook
-
-1. In Award Force navigate to _Settings \> Integrations \> Webhooks_
-2. Click the checkbox next to the webhook and delete it via the **Action** button
-3. Click **OK** in the confirmation dialog
-
-### Webhook payloads
+## Webhook payloads
 
 Webhook payloads are provided in JSON format and always contain the following attributes:
 
-| **Name**  | **Description**                                                                                    |
-| :-------- | :------------------------------------------------------------------------------------------------- |
-| event     | Enumerated string with possible values being one of the events described in the following sections |
-| timestamp | ISO 8601 formatted datetime value.<br />i.e. `2020-01-01T00:00:00Z`                                |
-| source    | Enumerated string with the following possible values:<br />- `ui` (default)<br />- `api`           |
+| Name | Description |
+|:-----|:------------|
+| `event` | Enumerated string with possible values being one of the events described in the following sections |
+| `timestamp` | ISO 8601 formatted datetime value. i.e. `2020-01-01T00:00:00Z` |
+| `source` | Enumerated string with the following possible values:<br/>- `ui` (default)<br/>- `api` |
 
 ### Signature
 
-You will receive a **Signature** header which you can use to validate the webhook payload. The signature value is generated with this algorithm, using the **Signing key** specified in your webhook and the JSON payload:
+You will receive a `Signature` header which you can use to validate the webhook payload.
 
-```php
+The signature value is generated with this algorithm, using the **Signing key** specified in your webhook and the JSON payload:
+
+```php PHP
 $signature = hash_hmac('sha256', $payloadJsonString, $signingKey);
 ```
 
-You can do the same in your endpoint and compare the header **Signature** value with the one you generated with this algorithm.
+You can do the same in your endpoint and compare the header `Signature` value with the one you generated with this algorithm.
 
 ### Available event subscriptions
 
-**Entry events**
+#### Entry events
 
-- collaborator_invited
-- entry_created
-- entry_eligible
-- entry_ineligible
-- entry_moderated
-- entry_resubmitted
-- entry_submitted
-- entry_tagged
-- entry_updated
-- field_value_updated
-- review_task_created
-- review_task_submitted
+- `collaborator_invited`
+- `entry_created`
+- `entry_eligible`
+- `entry_ineligible`
+- `entry_moderated`
+- `entry_resubmitted`
+- `entry_submitted`
+- `entry_tagged`
+- `entry_updated`
+- `field_value_updated`
+- `review_task_created`
+- `review_task_submitted`
 
-**Entry Payload**
-
-```json
+Below is an example of an entry created webhook payload:
+```json Entry Payload expandable
 {
   "attachments": [
     {
@@ -162,15 +165,15 @@ You can do the same in your endpoint and compare the header **Signature** value 
 }
 ```
 
-**User events**
+#### User events
 
-- role_granted
-- membership_registered (User created)
-- user_updated
+- `role_granted`
+- `membership_registered` (User created)
+- `user_updated`
 
-**User Payload**
+Below is an example of a user event webhook payload:
 
-```json
+```json User Payload expandable
 {
   "analytics_cookies": false,
   "broadcast_emails": false,
@@ -220,14 +223,14 @@ You can do the same in your endpoint and compare the header **Signature** value 
 }
 ```
 
-**Order events**
+#### Order events
 
-- payment_pending
-- payment_success
+- `payment_pending`
+- `payment_success`
 
-**Order Payload**
+Below is an example of an order event webhook payload:
 
-```json
+```json Order Payload expandable
 {
   "address": "123 Elizabeth St",
   "city": "Sydney",
@@ -279,10 +282,10 @@ You can do the same in your endpoint and compare the header **Signature** value 
 }
 ```
 
-**Other entry management events**
+#### Other entry management events
 
-- assignment_completed
-- assignment_created
-- document_created
-- document_deleted
-- document_updated
+- `assignment_completed`
+- `assignment_created`
+- `document_created`
+- `document_deleted`
+- `document_updated`

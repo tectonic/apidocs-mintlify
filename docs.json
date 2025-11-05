@@ -1,36 +1,97 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Award Force API",
+  "theme": "aspen",
+  "name": "Creative Force",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#17154B",
+    "light": "#eb3700",
+    "dark": "#2741F1"
   },
-  "favicon": "/af_favicon.png",  
+  "appearance": {
+    "default": "light"
+  },
+  "background": {
+    "decoration": "gradient"
+  },
+"fonts": {
+    "heading": {
+      "family": "Montserrat",
+      "format": "woff2",
+      "weight": 400,
+      "source": "https://fonts.wp.com/s/opensans/v44/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2"
+    },
+    "body": {
+      "family": "Montserrat",
+      "format": "woff2",
+      "weight": 400,
+      "source": "https://fonts.wp.com/s/opensans/v44/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2"
+    }
+  },
+  "favicon": "/favicon.svg",
   "navigation": {
-    "groups": [
+    "tabs": [
       {
-        "group": "Getting started",
+        "tab": "Documentation",
         "pages": [
-          "/pages/introduction",
-          "/pages/authentication",
-          "/pages/requests",
-          "/pages/responses",
-          "/pages/webhooks",
-          "/pages/versioning",
-          "/pages/changelog"
+          {
+            "group": "Award Force API",
+            "pages": [
+              "intro",
+              "authentication",
+              "requests",
+              "responses",
+              "webhooks",
+              "versioning"
+            ]
+          }
         ]
       },
       {
-        "group": "API reference",
-        "openapi": "/api-reference/openapi.json"
+        "tab": "API Reference",
+        "openapi": "openapi.yaml"
+      },
+      {
+        "tab": "Changelog",
+        "pages": ["changelog"]
       }
-    ]    
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Help Center",
+          "href": "https://support.awardforce.com/hc/en-us",
+          "icon": "headset"
+        },
+        {
+          "anchor": "Status",
+          "href": "https://status.awardforce.com",
+          "icon": "signal"
+        },
+        {
+          "anchor": "Blog",
+          "href": "https://awardforce.com/blog",
+          "icon": "newspaper"
+        }
+      ]
+    }
   },
   "logo": {
-    "light": "/logo/af_logo.png",
-    "dark": "/logo/af_logo.png"
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "https://awardforce.com"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Login",
+        "href": "https://my.awardforce.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Watch a demo",
+      "href": "https://awardforce.com/demo-form"
+    }
   },
   "contextual": {
     "options": [
@@ -43,5 +104,12 @@
       "cursor",
       "vscode"
     ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/awardforce",
+      "facebook": "https://www.facebook.com/awardforce",
+      "linkedin": "https://www.linkedin.com/company/award-force"
+    }
   }
 }
