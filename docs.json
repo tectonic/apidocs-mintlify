@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "aspen",
-  "name": "Creative Force",
+  "name": "Award Force",
   "colors": {
     "primary": "#17154B",
     "light": "#eb3700",
@@ -31,7 +31,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
+        "tab": "Getting started",
         "pages": [
           {
             "group": "Award Force API",
@@ -48,7 +48,7 @@
       },
       {
         "tab": "API Reference",
-        "openapi": "openapi.yaml"
+        "openapi": "openapi.json"
       },
       {
         "tab": "Changelog",
@@ -66,11 +66,6 @@
           "anchor": "Status",
           "href": "https://status.awardforce.com",
           "icon": "signal"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://awardforce.com/blog",
-          "icon": "newspaper"
         }
       ]
     }
@@ -81,28 +76,12 @@
     "href": "https://awardforce.com"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Login",
-        "href": "https://my.awardforce.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Watch a demo",
-      "href": "https://awardforce.com/demo-form"
-    }
+    "links": []
   },
   "contextual": {
     "options": [
       "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
+      "view"
     ]
   },
   "footer": {
