@@ -34,7 +34,7 @@
         "tab": "Getting started",
         "pages": [
           {
-            "group": "Award Force API",
+            "group": "Getting started",
             "pages": [
               "intro",
               "authentication",
