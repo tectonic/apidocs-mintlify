@@ -36,12 +36,12 @@
           {
             "group": "Getting started",
             "pages": [
-              "intro",
-              "authentication",
-              "requests",
-              "responses",
-              "webhooks",
-              "versioning"
+              "/pages/intro",
+              "/pages/authentication",
+              "/pages/requests",
+              "/pages/responses",
+              "/pages/webhooks",
+              "/pages/versioning"
             ]
           }
         ]
@@ -52,7 +52,7 @@
       },
       {
         "tab": "Changelog",
-        "pages": ["changelog"]
+        "pages": ["/pages/changelog"]
       }
     ],
     "global": {
